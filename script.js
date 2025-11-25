@@ -1,27 +1,23 @@
-// Simple stage click interaction + fake pipeline status “animation”
+// Pipeline stage interaction
+const stages = document.querySelectorAll('.stage');
 
-const stages = document.querySelectorAll(".pipeline-stage");
-const footerStatus = document.getElementById("footer-status");
-const statusMessages = [
-  "Running tests…",
-  "Building image…",
-  "Pushing to registry…",
-  "Deploying to production…",
-  "Deployment complete ✅"
-];
-
-let msgIndex = 0;
-
-if (footerStatus) {
-  setInterval(() => {
-    msgIndex = (msgIndex + 1) % statusMessages.length;
-    footerStatus.textContent = statusMessages[msgIndex];
-  }, 2500);
-}
-
-stages.forEach((stage) => {
-  stage.addEventListener("click", () => {
-    stages.forEach((s) => s.classList.remove("active"));
-    stage.classList.add("active");
+stages.forEach(stage => {
+  stage.addEventListener('click', () => {
+    stages.forEach(s => s.classList.remove('active'));
+    stage.classList.add('active');
   });
 });
+
+// Status animation
+const statusTexts = [
+  'Building reliable systems',
+  'Shipping with confidence',
+  'Automating workflows',
+  'Ready to deploy'
+];
+
+let index = 0;
+setInterval(() => {
+  index = (index + 1) % statusTexts.length;
+  document.getElementById('status').textContent = statusTexts[index];
+}, 3000);
