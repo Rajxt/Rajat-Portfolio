@@ -1,13 +1,207 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>rajat-resume</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <title>Dev Portfolio – CI/CD Theme</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="top-nav">
+    <div class="logo">ci/cd<span>_dev</span></div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#pipeline">Pipeline</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Hi, I’m <span class="accent">Your Name</span></h1>
+        <p class="subtitle">
+          Software Engineer focused on shipping reliably through modern CI/CD pipelines.
+        </p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn primary">View Projects</a>
+          <a href="#pipeline" class="btn ghost">View Pipeline</a>
+        </div>
+        <div class="hero-meta">
+          <span class="badge">Status: <span class="badge-dot"></span> Deploying</span>
+          <span class="meta-pill">Location: Remote</span>
+          <span class="meta-pill">Stack: JS · Python · Cloud</span>
+        </div>
+      </div>
+      <div class="hero-terminal">
+        <div class="terminal-header">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+          <span class="terminal-title">ci-cd-pipeline.yml</span>
+        </div>
+        <div class="terminal-body" id="terminal-body">
+<pre><code>stages:
+  - build
+  - test
+  - deploy
+
+job_build:
+  status: <span class="log-status log-done">SUCCESS</span>
+job_test:
+  status: <span class="log-status log-running">RUNNING</span>
+job_deploy:
+  status: <span class="log-status log-pending">PENDING</span></code></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section">
+      <h2 class="section-title">About</h2>
+      <p>
+        Developer specialising in cloud-native applications, pipelines, and automation.
+        Passionate about turning ideas into production-ready services with strong feedback loops.
+      </p>
+      <div class="about-grid">
+        <div class="card">
+          <h3>Skills</h3>
+          <ul>
+            <li>CI/CD: GitHub Actions, GitLab CI, Jenkins</li>
+            <li>Cloud: AWS / GCP basics, Docker</li>
+            <li>Web: HTML, CSS, JavaScript, REST APIs</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>What I care about</h3>
+          <ul>
+            <li>Reliable automated deployments</li>
+            <li>Fast feedback for developers</li>
+            <li>Clean and maintainable code</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CI/CD Pipeline -->
+    <section id="pipeline" class="section">
+      <h2 class="section-title">CI/CD Pipeline</h2>
+      <p class="section-subtitle">
+        Each stage mirrors how your code flows from commit to production.
+      </p>
+
+      <div class="pipeline">
+        <div class="pipeline-line"></div>
+
+        <div class="pipeline-stage active" data-stage="Commit">
+          <div class="stage-node"></div>
+          <div class="stage-card">
+            <h3>Commit</h3>
+            <p>Changes pushed to main trigger the pipeline instantly.</p>
+            <span class="stage-label">Source Control</span>
+          </div>
+        </div>
+
+        <div class="pipeline-stage active" data-stage="Build">
+          <div class="stage-node"></div>
+          <div class="stage-card">
+            <h3>Build</h3>
+            <p>Source is compiled, bundled, and containerised for a consistent runtime.</p>
+            <span class="stage-label">Build & Package</span>
+          </div>
+        </div>
+
+        <div class="pipeline-stage active" data-stage="Test">
+          <div class="stage-node"></div>
+          <div class="stage-card">
+            <h3>Test</h3>
+            <p>Unit and integration tests validate behaviour before any release.</p>
+            <span class="stage-label">Quality Gate</span>
+          </div>
+        </div>
+
+        <div class="pipeline-stage" data-stage="Deploy">
+          <div class="stage-node"></div>
+          <div class="stage-card">
+            <h3>Deploy</h3>
+            <p>Green builds roll out to staging, then production with monitoring.</p>
+            <span class="stage-label">Release</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="section">
+      <h2 class="section-title">Projects</h2>
+      <div class="projects-grid">
+        <article class="project-card">
+          <h3>Pipeline Dashboard</h3>
+          <p>
+            Single-page dashboard that visualises build, test, and deploy status for multiple services.
+          </p>
+          <ul class="project-meta">
+            <li>React · Node · WebSocket</li>
+            <li>CI: GitHub Actions</li>
+          </ul>
+          <a href="#" class="link">View repo →</a>
+        </article>
+
+        <article class="project-card">
+          <h3>Phishing Detection Service</h3>
+          <p>
+            ML service that scores incoming emails and routes suspicious traffic for review.
+          </p>
+          <ul class="project-meta">
+            <li>Python · ML</li>
+            <li>CI/CD: Docker + GitLab CI</li>
+          </ul>
+          <a href="#" class="link">View repo →</a>
+        </article>
+
+        <article class="project-card">
+          <h3>Static Portfolio Deployer</h3>
+          <p>
+            Scripted pipeline to lint, build, and deploy static sites to object storage and CDN.
+          </p>
+          <ul class="project-meta">
+            <li>Bash · Terraform</li>
+            <li>CI: Jenkins</li>
+          </ul>
+          <a href="#" class="link">View repo →</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section">
+      <h2 class="section-title">Contact</h2>
+      <p>If you’d like to collaborate, ship something, or just say hi, reach out below.</p>
+      <form class="contact-form">
+        <div class="field">
+          <label for="name">Name</label>
+          <input id="name" type="text" placeholder="Your name" />
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" type="email" placeholder="you@example.com" />
+        </div>
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea id="message" rows="4" placeholder="Tell me about your project..."></textarea>
+        </div>
+        <button type="submit" class="btn primary">Send</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>© 2025 Your Name</span>
+    <span>Pipeline status: <span id="footer-status">Running tests…</span></span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
 </html>
