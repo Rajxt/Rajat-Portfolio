@@ -1,0 +1,37 @@
+/* Add to Components.css */
+.header-stage {
+    padding-top: 100px;
+}
+.name-title {
+    font-size: 3.5em;
+    font-weight: 700;
+    margin-top: 10px;
+    text-shadow: 0 0 15px rgba(255, 87, 34, 0.4);
+}
+.job-title {
+    font-family: var(--font-mono);
+    font-size: 1.2em;
+    color: var(--color-gray-medium);
+    margin-bottom: 20px;
+}
+.log-line {
+    font-family: var(--font-mono);
+    font-size: 0.9em;
+    color: var(--color-gray-medium);
+}
+.commit-tag {
+    color: var(--color-accent);
+    font-weight: bold;
+    margin-right: 5px;
+}
+.log-line.success {
+    color: var(--color-success);
+}
+.cursor {
+    animation: blink-cursor 1s infinite;
+    display: inline-block;
+}
+@keyframes blink-cursor {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
