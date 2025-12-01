@@ -3,9 +3,9 @@ pipeline {
     
     environment {
         // Change these to match your project
-        APP_NAME = "myapp"
+        APP_NAME = "myportfolioapp"
         DOCKER_TAG = "${BUILD_NUMBER}"
-        GIT_REPO = "https://github.com/YOUR_USERNAME/YOUR_REPO"
+        GIT_REPO = "https://github.com/Rajxt/Rajat-Portfolio.git"
         GIT_BRANCH = "main"
     }
     
