@@ -2,9 +2,10 @@ pipeline {
     agent any
     
     environment {
-        APP_NAME = "myportfolio"
+        // Change these to match your project
+        APP_NAME = "myapp"
         DOCKER_TAG = "${BUILD_NUMBER}"
-        GIT_REPO = "https://github.com/Rajxt/Rajat-Portfolio.git"
+        GIT_REPO = "https://github.com/YOUR_USERNAME/YOUR_REPO"
         GIT_BRANCH = "main"
     }
     
