@@ -136,13 +136,9 @@ pipeline {
                 echo '🧹 Cleaning up old Docker images...'
                 script {
                     // Keep last 3 builds, remove older ones
-                    sh """
-                        docker images ${APP_NAME} --format '{{.Tag}}' | \
-                        grep -E '^[0-9]+\ | \
-                        sort -rn | \
-                        tail -n +4 | \
-                        xargs -I {} docker rmi ${APP_NAME}:{} 2>/dev/null || true
-                    """
+                    sh '''
+                    docker images ${APP_NAME} --format '{{.Tag}}' | grep -E '^[0-9]+$' | sort -rn | tail -n +4 | xargs -I {} docker rmi ${APP_NAME}:{} 2>/dev/null || true
+                    '''
                     
                     // Show remaining images
                     sh "docker images ${APP_NAME}"
